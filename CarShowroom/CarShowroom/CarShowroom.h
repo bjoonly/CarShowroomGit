@@ -28,6 +28,17 @@ public:
 		return car.model == model;
 	}
 };
+class Year {
+	int year;
+public:
+	Year(int year = 0) :year(year) {}
+	bool operator()(const Car& car) {
+		return year == car.year;
+	}
+	bool operator()(const Car& c1, const Car& c2) {
+		return c1.year < c2.year;
+	}
+};
 
 class CarShowroom {
 	vector<Car>cars;
@@ -35,6 +46,8 @@ public:
 	void AddCar(const Car& car);
 	void Show()const;
 	void SearchByModel(string model);
+	void SearchByYear(int year);
 
 	void SortByModel();
+	void SortByYear();
 };

@@ -46,7 +46,17 @@ void CarShowroom::SearchByModel(string model) {
 	else
 		cout << "Not found car with entered model.";
 }
+void CarShowroom::SearchByYear(int year) {
+	auto res = find_if(cars.begin(), cars.end(), Year(year));
+	if (res != cars.end())
+		cout << *res;
+	else
+		cout << "Not found car with entered year.";
+}
 
 void CarShowroom::SortByModel() {
 	sort(cars.begin(), cars.end(), Model());
+}
+void CarShowroom::SortByYear() {
+	sort(cars.begin(), cars.end(), Year());
 }
