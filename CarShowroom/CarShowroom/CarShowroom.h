@@ -39,7 +39,17 @@ public:
 		return c1.year < c2.year;
 	}
 };
-
+class Price {
+	double price;
+public:
+	Price(double price = 0) :price(price) {}
+	bool operator()(const Car& car) {
+		return price == car.price;
+	}
+	bool operator()(const Car& c1, const  Car& c2) {
+		return c1.price < c2.price;
+	}
+};
 class CarShowroom {
 	vector<Car>cars;
 public:
@@ -47,7 +57,9 @@ public:
 	void Show()const;
 	void SearchByModel(string model);
 	void SearchByYear(int year);
+	void SearchByPrice(double price);
 
 	void SortByModel();
 	void SortByYear();
+	void SortByPrice();
 };
