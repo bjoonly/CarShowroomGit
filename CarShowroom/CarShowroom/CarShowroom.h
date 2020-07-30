@@ -76,4 +76,5 @@ public:
 	void SortByPrice();
 	void SortByVolume();
 	void Remove();
+	void IsCorrectYear()const;
 };

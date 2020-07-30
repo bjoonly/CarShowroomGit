@@ -44,28 +44,28 @@ void CarShowroom::SearchByModel(string model) {
 	if (res != cars.end())
 		cout << *res;
 	else
-		cout << "Not found car with entered model.";
+		cout << "Not found car with entered model.\n";
 }
 void CarShowroom::SearchByPrice(double price) {
 	auto res = find_if(cars.begin(), cars.end(), Price(price));
 	if (res != cars.end())
 		cout << *res;
 	else
-		cout << "Not found car with entered price.";
+		cout << "Not found car with entered price.\n";
 }
 void CarShowroom::SearchByYear(int year) {
 	auto res = find_if(cars.begin(), cars.end(), Year(year));
 	if (res != cars.end())
 		cout << *res;
 	else
-		cout << "Not found car with entered year.";
+		cout << "Not found car with entered year.\n";
 }
 void CarShowroom::SearchByVolume(double volume) {
 	auto res = find_if(cars.begin(), cars.end(), Volume(volume));
 	if (res != cars.end())
 		cout << *res;
 	else
-		cout << "Not found car with entered volume.";
+		cout << "Not found car with entered volume.\n";
 }
 void CarShowroom::SortByModel() {
 	sort(cars.begin(), cars.end(), Model());
@@ -83,4 +83,11 @@ void CarShowroom::SortByVolume() {
 void CarShowroom::Remove(){
 	auto newEnd=remove_if(cars.begin(), cars.end(), [](const Car&car) {return car.year < 2000; });
 	cars.erase(newEnd, cars.end());
+}
+
+void CarShowroom::IsCorrectYear() const{
+	if (all_of(cars.begin(), cars.end(), [](const Car& car) {return car.year >= 1885 && car.year <= 2020; }))
+		cout << "All cars have correct year of manufature.\n";
+	else
+		cout << "Not all cars have correct year of manufature.\n";
 }
