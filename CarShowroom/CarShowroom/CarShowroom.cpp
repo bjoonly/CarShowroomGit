@@ -112,3 +112,7 @@ void CarShowroom::PriceCarsLess5() const{
 	for_each(cars.begin(), cars.end(), [&sum](const Car& car) {if (car.year > 2015) sum += car.price; });
 	cout << "Price of cars produced less than 5 years ago: " << sum << ".\n";
 }
+
+void CarShowroom::PriceReduction(){
+	for_each(cars.begin(), cars.end(), [](Car& car) {if (car.year < 2006)car.price-=car.price*0.2; });
+}

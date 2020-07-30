@@ -80,4 +80,5 @@ public:
 	void PriceMore100000()const;
 	void VolumeLess1()const;
 	void PriceCarsLess5()const;
+	void PriceReduction();
 };
