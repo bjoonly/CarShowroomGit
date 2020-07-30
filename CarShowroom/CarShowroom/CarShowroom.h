@@ -75,4 +75,5 @@ public:
 	void SortByYear();
 	void SortByPrice();
 	void SortByVolume();
+	void Remove();
 };

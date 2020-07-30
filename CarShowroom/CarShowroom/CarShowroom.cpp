@@ -79,3 +79,8 @@ void CarShowroom::SortByPrice() {
 void CarShowroom::SortByVolume() {
 	sort(cars.begin(), cars.end(), Volume());
 }
+
+void CarShowroom::Remove(){
+	auto newEnd=remove_if(cars.begin(), cars.end(), [](const Car&car) {return car.year < 2000; });
+	cars.erase(newEnd, cars.end());
+}
