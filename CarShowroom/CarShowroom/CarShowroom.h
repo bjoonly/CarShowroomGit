@@ -50,6 +50,17 @@ public:
 		return c1.price < c2.price;
 	}
 };
+class Volume {
+	double volume;
+public:
+	Volume(double volume = 0) :volume(volume) {}
+	bool operator()(const Car& c1, const Car& c2) {
+		return c1.volume < c2.volume;
+	}
+	bool operator()(const Car& car) {
+		return volume == car.volume;
+	}
+};
 class CarShowroom {
 	vector<Car>cars;
 public:
@@ -58,8 +69,10 @@ public:
 	void SearchByModel(string model);
 	void SearchByYear(int year);
 	void SearchByPrice(double price);
+	void SearchByVolume(double volume);
 
 	void SortByModel();
 	void SortByYear();
 	void SortByPrice();
+	void SortByVolume();
 };

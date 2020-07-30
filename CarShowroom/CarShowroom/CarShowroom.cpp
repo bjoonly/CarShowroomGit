@@ -60,7 +60,13 @@ void CarShowroom::SearchByYear(int year) {
 	else
 		cout << "Not found car with entered year.";
 }
-
+void CarShowroom::SearchByVolume(double volume) {
+	auto res = find_if(cars.begin(), cars.end(), Volume(volume));
+	if (res != cars.end())
+		cout << *res;
+	else
+		cout << "Not found car with entered volume.";
+}
 void CarShowroom::SortByModel() {
 	sort(cars.begin(), cars.end(), Model());
 }
@@ -69,4 +75,7 @@ void CarShowroom::SortByYear() {
 }
 void CarShowroom::SortByPrice() {
 	sort(cars.begin(), cars.end(), Price());
+}
+void CarShowroom::SortByVolume() {
+	sort(cars.begin(), cars.end(), Volume());
 }
