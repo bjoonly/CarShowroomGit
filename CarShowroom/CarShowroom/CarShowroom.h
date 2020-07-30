@@ -81,4 +81,5 @@ public:
 	void VolumeLess1()const;
 	void PriceCarsLess5()const;
 	void PriceReduction();
+	void CountEuro5()const;
 };

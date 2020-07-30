@@ -116,3 +116,9 @@ void CarShowroom::PriceCarsLess5() const{
 void CarShowroom::PriceReduction(){
 	for_each(cars.begin(), cars.end(), [](Car& car) {if (car.year < 2006)car.price-=car.price*0.2; });
 }
+
+void CarShowroom::CountEuro5() const{
+	int count = 0;
+	for_each(cars.begin(), cars.end(), [&count](const Car& car) {if (car.year > 2010) ++count; });
+	cout << "Count of EURO-5 standard cars: " << count << ".\n";
+}
