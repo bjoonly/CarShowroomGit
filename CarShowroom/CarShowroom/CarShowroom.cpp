@@ -106,3 +106,9 @@ void CarShowroom::VolumeLess1() const{
 	else
 		cout << "Car with volume less 1.0 is present.\n";
 }
+
+void CarShowroom::PriceCarsLess5() const{
+	double sum = 0.0;
+	for_each(cars.begin(), cars.end(), [&sum](const Car& car) {if (car.year > 2015) sum += car.price; });
+	cout << "Price of cars produced less than 5 years ago: " << sum << ".\n";
+}

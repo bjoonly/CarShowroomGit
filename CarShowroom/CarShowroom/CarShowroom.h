@@ -79,4 +79,5 @@ public:
 	void IsCorrectYear()const;
 	void PriceMore100000()const;
 	void VolumeLess1()const;
+	void PriceCarsLess5()const;
 };
