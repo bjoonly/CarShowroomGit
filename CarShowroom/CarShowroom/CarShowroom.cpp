@@ -38,3 +38,15 @@ void CarShowroom::AddCar(const Car& car){
 void CarShowroom::Show() const{
 	for_each(cars.begin(), cars.end(), [](const Car& car) {cout << car << endl; });
 }
+
+void CarShowroom::SearchByModel(string model) {
+	auto res = find_if(cars.begin(), cars.end(), Model(model));
+	if (res != cars.end())
+		cout << *res;
+	else
+		cout << "Not found car with entered model.";
+}
+
+void CarShowroom::SortByModel() {
+	sort(cars.begin(), cars.end(), Model());
+}
