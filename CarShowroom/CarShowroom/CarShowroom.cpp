@@ -22,8 +22,8 @@ void Car::SetPrice(double price) {
 }
 
 void Car::SetVolume(double volume) {
-	if (volume < 1)
-		volume = 1;
+	if (volume < 0.1)
+		volume = 0.1;
 	this->volume = volume;
 }
 ostream& operator<<(ostream& out, const Car& car) {
@@ -97,5 +97,12 @@ void CarShowroom::PriceMore100000() const{
 		cout << "Car with price more than 100 000 is present.\n";
 	}
 	else
-		cout << "No cars with a price mote than 100 000.\n";
+		cout << "No cars with a price more than 100 000.\n";
+}
+
+void CarShowroom::VolumeLess1() const{
+	if (none_of(cars.begin(), cars.end(), [](const Car& car) {return car.volume < 1.0; }))
+		cout << "There are no cars with volume less than 1.0.\n";
+	else
+		cout << "Car with volume less 1.0 is present.\n";
 }

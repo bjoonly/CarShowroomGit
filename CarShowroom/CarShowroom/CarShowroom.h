@@ -78,4 +78,5 @@ public:
 	void Remove();
 	void IsCorrectYear()const;
 	void PriceMore100000()const;
+	void VolumeLess1()const;
 };
