@@ -30,3 +30,7 @@ ostream& operator<<(ostream& out, const Car& car) {
 	cout << "Model: " << car.model << "\nYear: " << car.year << "\nVolume: " << car.volume << "\nPrice: " << car.price << endl;
 	return out;
 }
+
+void CarShowroom::AddCar(const Car& car){
+	cars.push_back(car);
+}
