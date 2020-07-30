@@ -26,3 +26,7 @@ void Car::SetVolume(double volume) {
 		volume = 1;
 	this->volume = volume;
 }
+ostream& operator<<(ostream& out, const Car& car) {
+	cout << "Model: " << car.model << "\nYear: " << car.year << "\nVolume: " << car.volume << "\nPrice: " << car.price << endl;
+	return out;
+}
