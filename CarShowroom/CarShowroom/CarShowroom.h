@@ -21,4 +21,5 @@ class CarShowroom {
 	vector<Car>cars;
 public:
 	void AddCar(const Car& car);
+	void Show()const;
 };

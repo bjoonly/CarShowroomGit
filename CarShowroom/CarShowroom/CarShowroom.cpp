@@ -34,3 +34,7 @@ ostream& operator<<(ostream& out, const Car& car) {
 void CarShowroom::AddCar(const Car& car){
 	cars.push_back(car);
 }
+
+void CarShowroom::Show() const{
+	for_each(cars.begin(), cars.end(), [](const Car& car) {cout << car << endl; });
+}
