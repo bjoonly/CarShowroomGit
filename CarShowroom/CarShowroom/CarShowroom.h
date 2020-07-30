@@ -17,4 +17,6 @@ struct Car {
 	friend ostream& operator<<(ostream& out, const Car& car);
 };
 
-
+class CarShowroom {
+	vector<Car>cars;
+};
