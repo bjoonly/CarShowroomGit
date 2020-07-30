@@ -91,3 +91,11 @@ void CarShowroom::IsCorrectYear() const{
 	else
 		cout << "Not all cars have correct year of manufature.\n";
 }
+
+void CarShowroom::PriceMore100000() const{
+	if (any_of(cars.begin(), cars.end(), [](const Car& car) {return car.price > 100000; })) {
+		cout << "Car with price more than 100 000 is present.\n";
+	}
+	else
+		cout << "No cars with a price mote than 100 000.\n";
+}
